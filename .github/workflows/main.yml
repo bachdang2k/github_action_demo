@@ -33,7 +33,7 @@ jobs:
           context: . #current file
           dockerfile: Dockerfile
           push: false # check unable create images
-          tags: ${{ secrets.DOCKER_USERNAME }}/github-actions-demo:today
+          tags: ${{ secrets.DOCKER_USERNAME }}/github-actions-demo:latest
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
@@ -47,7 +47,7 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:today
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:latest
 
       # - name: Build Docker Image
       #   uses: docker/build-push-action@v2
